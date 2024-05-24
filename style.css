@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.time {
+  font-size: 16px;
+}
+
+.box {
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 150px;
+  height: 100px;
+}
+
+.box p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.calendar {
+  margin-top: 50px;
+}
+
+.box {
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 150px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: black;
+  text-align: center;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+.box {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 0 1cm 1cm 0; /* Add margin to create spacing of 2cm */
+  display: inline-block;
+}
+
+.google-calendar {
+  margin-top: 20px;
+}
+.dropdown-content a:hover {
+  background-color: #ddd; /* Change highlighting color to grey */
+}

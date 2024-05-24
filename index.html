@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by zay</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Address Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #777;
+    }
+
+    .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .box {
+      width: 200px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    .box p {
+      font-size: 1.2em;
+      margin: 0;
+      color: #555;
+      font-weight: bold;
+    }
+
+    .box a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .box a:hover {
+      color: #007bff;
+    }
+
+    .description {
+      font-size: 0.9em;
+      margin-top: 10px;
+      color: #888;
+      text-align: left;
+      padding-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to The Address</h1>
+    <p id="greeting" class="greeting"></p>
+    <p id="time" class="time"></p>
+    <p id="date" class="date"></p>
+    <div class="box-container">
+      <div class="box" style="background-color: #c8e6c9;">
+        <a href="https://1drv.ms/x/c/946b4b8e49768086/EX9eNoLUk4dFqKBUzmXykA8BGUuRsNImyTx3lleMlwtb4A?e=69Ws0B" target="_blank">
+          <p><strong>Employee Attendance</strong></p>
+        </a>
+        <p class="description">This must be recorded every single working day.</p>
+      </div>
+      <div class="box" style="background-color: #ffcc80;">
+        <a href="https://1drv.ms/x/c/946b4b8e49768086/EU0prXaZeqVFni_3qHrgoFEBd7-r_km7yAOgezRttLN-nA?e=d6Csnh" target="_blank">
+          <p><strong>Inventory</strong></p>
+        </a>
+        <p class="description">- Cupboard stock<br>- Inventory purchased<br>- Cleaners refills</p>
+      </div>
+      <div class="box" style="background-color: #bbdefb;">
+        <a href="https://calendar.google.com/calendar/u/0?cid=YTU3NTM0ZWEzMmE3MTgyN2JiMjI4ZGVkNjdlNmY4ODRjNDU2Yzc2ZDVkMGM0M2ZkMGY0OTUzMjg2OTdiZDczOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank">
+          <p><strong>Calendar</strong></p>
+        </a>
+        <p class="description"><strong>Reminders:</strong><br>- AC repairs<br>- Fumigation<br>- Maintenance checks every 6 months</p>
+      </div>
+      <div class="box" style="background-color: #eceff1;"> <!-- Pastel Grey -->
+        <a href="https://1drv.ms/x/c/946b4b8e49768086/Ed6Xkl_XqVFKkL2cvc7j8vgBCvhAJWbYAovqzuzCVKI81g?e=IX8lFK" target="_blank">
+          <p><strong>Repair and Maintenance Records</strong></p>
+        </a>
+        <p class="description">All room repairs need to be recorded here.</p>
+      </div>
+      <div class="box" style="background-color: #d7ccc8;"> <!-- Pastel Grey -->
+        <a href="https://1drv.ms/x/c/946b4b8e49768086/EUIxpTk6rb9Fqtxj7kahgRIB37WmNztks7ZSKwQ81OH_4A?e=y6iOwj" target="_blank">
+          <p><strong>Room Refills</strong></p>
+        </a>
+        <p class="description">Refills for amenities in the room.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to display greeting, time, and date
+    function displayDateTime() {
+      const now = new Date();
+
+      // Display greeting based on the time of day
+      let greeting;
+      const hour = now.getHours();
+      if (hour < 12) {
+        greeting = 'Good morning';
+      } else if (hour < 18) {
+        greeting = 'Good afternoon';
+      } else {
+        greeting = 'Good evening';
+      }
+      document.getElementById('greeting').textContent = greeting + ", The Address";
+
+      // Display time in 12-hour format
+      let hours = now.getHours();
+      const minutes = now.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      const strTime = hours + ':' + (minutes < 10 ? '0' + minutes : minutes) + ' ' + ampm;
+      document.getElementById('time').textContent = strTime;
+
+      // Display date in long date format with day
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const strDate = now.toLocaleDateString(undefined, options);
+      document.getElementById('date').textContent = strDate;
+    }
+
+    // Call the function to display the greeting, time, and date immediately
+    displayDateTime();
+    // Update the time every minute
+    setInterval(displayDateTime, 60000);
+  </script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
